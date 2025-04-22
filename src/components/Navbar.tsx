@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: "Dashboardd", path: "/dashboard", icon: <Home className="h-5 w-5" /> },
+    { name: "Dashboard", path: "/dashboard", icon: <Home className="h-5 w-5" /> },
     { name: "Expenses", path: "/expenses", icon: <CreditCard className="h-5 w-5" /> },
     { name: "Reports", path: "/reports", icon: <LineChart className="h-5 w-5" /> },
     { name: "Categories", path: "/categories", icon: <PieChart className="h-5 w-5" /> },
