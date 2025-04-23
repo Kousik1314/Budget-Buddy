@@ -45,14 +45,5 @@ pipeline {
                 bat 'curl -I http://localhost:3000 || exit 0'
             }
         }
-
-        stage('Cleanup (Optional)') {
-            steps {
-                echo 'Tearing down container (optional)...'
-                dir('Budget-Buddy') {
-                    bat 'docker compose down'
-                }
-            }
-        }
     }
 }
