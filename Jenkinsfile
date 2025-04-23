@@ -16,7 +16,8 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Kousik1314/Budget-Buddy.git'
+                echo 'Cloning the repository...'
+                git branch: 'main', url: 'https://github.com/Kousik1314/Budget-Buddy.git'
             }
         }
 
