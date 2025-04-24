@@ -46,4 +46,19 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            emailext(
+                subject: "Jenkins Job: ${env.JOB_NAME} - ${currentBuild.currentResult}",
+                body: """\
+                    <p>Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) has completed.</p>
+                    <p>Status: <b>${currentBuild.currentResult}</b></p>
+                    <p><a href="${env.BUILD_URL}">View Build</a></p>
+                """,
+                to: 'kousikmaity157@gmail.com',
+                mimeType: 'text/html'
+            )
+        }
+    }
 }
