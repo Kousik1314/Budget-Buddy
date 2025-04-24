@@ -52,16 +52,16 @@ pipeline {
             mail to: 'kousikmaity157@gmail.com',
                  subject: "✅ Build Success - #${env.BUILD_NUMBER}",
                  body: """
-🎉 Your Jenkins pipeline ran successfully!
+Your Jenkins pipeline ran successfully!
 
-📄 Job Name: ${env.JOB_NAME}
-🔢 Build Number: ${env.BUILD_NUMBER}
-🌿 Branch: ${env.GIT_BRANCH}
-🔗 Build URL: ${env.BUILD_URL}
-🕒 Timestamp: ${new Date()}
-⏱ Duration: ${currentBuild.durationString}
+Job Name: ${env.JOB_NAME}
+Build Number: ${env.BUILD_NUMBER}
+Branch: ${env.GIT_BRANCH}
+Build URL: ${env.BUILD_URL}
+Timestamp: ${new Date()}
+Duration: ${currentBuild.durationString}
 
-✅ Status: SUCCESS
+Status: SUCCESS
 """
         }
         failure {
@@ -70,14 +70,14 @@ pipeline {
                  body: """
 ⚠️ Pipeline build failed.
 
-📄 Job Name: ${env.JOB_NAME}
-🔢 Build Number: ${env.BUILD_NUMBER}
-🌿 Branch: ${env.GIT_BRANCH}
-🔗 Build URL: ${env.BUILD_URL}
-🕒 Timestamp: ${new Date()}
-⏱ Duration: ${currentBuild.durationString}
+Job Name: ${env.JOB_NAME}
+Build Number: ${env.BUILD_NUMBER}
+Branch: ${env.GIT_BRANCH}
+Build URL: ${env.BUILD_URL}
+Timestamp: ${new Date()}
+Duration: ${currentBuild.durationString}
 
-❌ Status: FAILURE
+Status: FAILURE
 
 Please check the Jenkins console output for more details.
 """
