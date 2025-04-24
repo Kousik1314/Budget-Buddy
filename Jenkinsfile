@@ -48,17 +48,39 @@ pipeline {
     }
 
     post {
-        always {
-            emailext(
-                subject: "Jenkins Job: ${env.JOB_NAME} - ${currentBuild.currentResult}",
-                body: """\
-                    <p>Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) has completed.</p>
-                    <p>Status: <b>${currentBuild.currentResult}</b></p>
-                    <p><a href="${env.BUILD_URL}">View Build</a></p>
-                """,
-                to: 'kousikmaity157@gmail.com',
-                mimeType: 'text/html'
-            )
+        success {
+            mail to: 'kousikmaity157@gmail.com',
+                 subject: "✅ Build Success - #${env.BUILD_NUMBER}",
+                 body: """
+🎉 Your Jenkins pipeline ran successfully!
+
+📄 Job Name: ${env.JOB_NAME}
+🔢 Build Number: ${env.BUILD_NUMBER}
+🌿 Branch: ${env.GIT_BRANCH}
+🔗 Build URL: ${env.BUILD_URL}
+🕒 Timestamp: ${new Date()}
+⏱ Duration: ${currentBuild.durationString}
+
+✅ Status: SUCCESS
+"""
+        }
+        failure {
+            mail to: 'kousikmaity157@gmail.com',
+                 subject: "❌ Build Failed - #${env.BUILD_NUMBER}",
+                 body: """
+⚠️ Pipeline build failed.
+
+📄 Job Name: ${env.JOB_NAME}
+🔢 Build Number: ${env.BUILD_NUMBER}
+🌿 Branch: ${env.GIT_BRANCH}
+🔗 Build URL: ${env.BUILD_URL}
+🕒 Timestamp: ${new Date()}
+⏱ Duration: ${currentBuild.durationString}
+
+❌ Status: FAILURE
+
+Please check the Jenkins console output for more details.
+"""
         }
     }
 }
