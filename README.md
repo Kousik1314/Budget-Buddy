@@ -222,8 +222,8 @@ GitHub: [@Kousik1314](https://github.com/Kousik1314)
 - 📚 [React Documentation](https://reactjs.org/docs/getting-started.html)  
 - 🎨 [Tailwind CSS Documentation](https://tailwindcss.com/docs)  
 - 🌐 [Netlify Documentation](https://docs.netlify.com/)
-- - 🐳 [Docker Documentation](https://docs.docker.com/)
+- 🐳 [Docker Documentation](https://docs.docker.com/)
 - 🤖 [Jenkins Documentation](https://www.jenkins.io/doc/)
-- 
+
 Made with ❤️ by Kousik Maity
 
