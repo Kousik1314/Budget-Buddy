@@ -50,7 +50,7 @@ pipeline {
     post {
         success {
             mail to: 'kousikmaity157@gmail.com',
-                 subject: "Hey! Build Success - #${env.BUILD_NUMBER}",
+                 subject: "Hey! ${env.JOB_NAME} Build Success - #${env.BUILD_NUMBER}",
                  body: """
 Your Jenkins pipeline ran successfully!
 
